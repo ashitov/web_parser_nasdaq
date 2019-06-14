@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Periods for {{ stock }}</title>
+</head>
+<body>
+<h1>Minimal Periods with {{ delta_type }} delta={{ delta }}  of {{ stock }}</h1>
+{% for period in periods %}
+<h2>{{ period['date_from'] }} - {{ period['date_to'] }}</h2>
+{% endfor %}
+</body>
+</html>

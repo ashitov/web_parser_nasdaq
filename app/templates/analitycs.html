@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analitycs for {{ stock }}</title>
+</head>
+<body>
+<h1>Analitycs for {{ stock }}</h1>
+<h2>Date interval from {{ date_from }} to {{ date_to }}</h2>
+<h2>For this stock difference between max open price({{ max_price['open'] }}) and min open price({{ min_price['open'] }}) is {{ "{0:0.02f}".format(diff_price['open']) }}</h2>
+<h2>For this stock difference between max high price({{ max_price['high'] }}) and min high price({{ min_price['high'] }}) is {{ "{0:0.02f}".format(diff_price['high']) }}</h2>
+<h2>For this stock difference between max low price({{ max_price['low'] }}) and min low price({{ min_price['low'] }}) is {{ "{0:0.02f}".format(diff_price['low']) }}</h2>
+<h2>For this stock difference between max close price({{ max_price['close'] }}) and min close price({{ min_price['close'] }}) is {{ "{0:0.02f}".format(diff_price['close']) }}</h2>
+</body>
+</html>

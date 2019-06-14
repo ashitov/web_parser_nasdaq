@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3 month history of prices for {{ stock }}</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<H1>Price history for {{ stock }}</H1>
+<h2><a href="/{{ stock }}/insider">Inside trades for stock {{ stock }}</a></h2>
+<table>
+    <thead>
+    <tr>
+        <td>Date</td>
+        <td>Open price</td>
+        <td>High price</td>
+        <td>Low price</td>
+        <td>Close price</td>
+        <td>Volume</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in history %}
+        <tr>
+        <td>{{ row.price_date }}</td>
+        <td>{{ row.open_price }}</td>
+        <td>{{ row.high_price }}</td>
+        <td>{{ row.low_price }}</td>
+        <td>{{ row.close_price }}</td>
+        <td>{{ row.volume }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

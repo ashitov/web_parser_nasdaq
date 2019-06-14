@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stocks</title>
+</head>
+<body>
+<H1>Here be the list of stocks in base</H1>
+{% for stock in stocks %}
+    <div><a href="/{{ stock }}">{{ stock }}</a></div>
+{% endfor %}
+</body>
+</html>

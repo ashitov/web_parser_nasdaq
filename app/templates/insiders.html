@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insider trades for {{ stock }}</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<h1>Insider trades for {{ stock }}</h1>
+<table>
+    <thead>
+    <tr>
+        <td>Insider</td>
+        <td>Relation</td>
+        <td>Last date</td>
+        <td>Transaction type</td>
+        <td>Owner type</td>
+        <td>Shares traded</td>
+        <td>Last price</td>
+        <td>Shares held</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for trade in trades %}
+        <tr>
+            <td><a href="/{{ stock }}/insider/{{ trade.saler.name }}">{{ trade.saler.name }}</a></td>
+        <td>{{ trade.saler.relation }}</td>
+        <td>{{ trade.trade_date }}</td>
+        <td>{{ trade.transaction_type }}</td>
+        <td>{{ trade.owner_type }}</td>
+        <td>{{ trade.shares_traded }}</td>
+        <td>{{ trade.last_price }}</td>
+        <td>{{ trade.shares_held }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
